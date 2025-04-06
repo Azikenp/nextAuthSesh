@@ -1,15 +1,13 @@
-
 import { LogOutButton } from "../auth/nextjs/components/LogOutButtons";
-import { Button } from "../components/ui/button"
+import { Button } from "../components/ui/button";
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-  
-} from "../components/ui/card"
-import Link from "next/link"
+} from "../components/ui/card";
+import Link from "next/link";
 
 export default async function HomePage() {
   const fullUser = { id: "", name: "Kyle", role: "user" };
@@ -32,11 +30,11 @@ export default async function HomePage() {
             <CardDescription>Role: {fullUser.role}</CardDescription>
           </CardHeader>
           <CardFooter className="flex gap-4">
-            <Button asChild className="outline">
+            <Button asChild variant="outline">
               <Link href="/private">Private Page</Link>
             </Button>
             {fullUser.role === "admin" && (
-              <Button asChild className="outline">
+              <Button asChild variant="outline">
                 <Link href="/admin">Admin Page</Link>
               </Button>
             )}
@@ -45,5 +43,5 @@ export default async function HomePage() {
         </Card>
       )}
     </div>
-  )
+  );
 }

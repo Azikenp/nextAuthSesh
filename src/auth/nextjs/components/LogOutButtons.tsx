@@ -3,5 +3,5 @@
 import { Button } from "@/src/components/ui/button";
 
 export function LogOutButton() {
-  return <Button className="destructive">Log Out</Button>;
+  return <Button variant="destructive">Log Out</Button>;
 }

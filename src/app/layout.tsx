@@ -1,6 +1,8 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
+import Navbar from "@/components/Navbar";
+import AuthProvider from "@/context/AuthProvider";
 
 const JetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -16,7 +18,14 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={JetBrainsMono.variable}>{children}</body>
+      <body className={JetBrainsMono.variable}>
+        <AuthProvider>
+          <Navbar />
+          <main className="flex justify-center items-start p-6 min-h-screen">
+            {children}
+          </main>
+        </AuthProvider>
+      </body>
     </html>
   );
 }

@@ -7,7 +7,7 @@ const page = async () => {
   return (
     <>
       {session ? (
-        <UserCard user={session?.user} pageType={"Home"} />
+        <UserCard user={session?.user} pagetype={"Home"} />
       ) : (
         <h1 className="text-5xls">You shall not pass</h1>
       )}
